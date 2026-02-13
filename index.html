@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insightly - Analytics Dashboard</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+      <nav
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="/" class="text-xl font-semibold text-gray-900">Insightly</a>
+
+        <ul class="hidden md:flex gap-8 text-gray-600 font-medium">
+          <li>
+            <a href="#" class="hover:text-gray-900 transition-colors"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-gray-900 transition-colors"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-gray-900 transition-colors"
+              >Resources</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="#"
+            class="hidden md:inline-block bg-sky-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-sky-600 transition-colors"
+            >Start Free Trial</a
+          >
+
+          <button
+            id="menu-toggle"
+            class="md:hidden flex flex-col gap-1.5 p-2"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span class="w-6 h-0.5 bg-gray-600"></span>
+            <span class="w-6 h-0.5 bg-gray-600"></span>
+            <span class="w-6 h-0.5 bg-gray-600"></span>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="mobile-menu w-full bg-white border-b border-gray-200 px-4 md:hidden max-h-0 overflow-hidden transition-all duration-700 ease-in-out"
+      >
+        <ul
+          class="flex flex-col gap-4 py-4 transition-all duration-700 ease-in-out"
+        >
+          <li>
+            <a
+              class="text-gray-700 font-medium hover:text-gray-900 transition-colors"
+              href="#"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-gray-700 font-medium hover:text-gray-900 transition-colors"
+              href="#"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-gray-700 font-medium hover:text-gray-900 transition-colors"
+              href="#"
+              >Resources</a
+            >
+          </li>
+          <li>
+            <a
+              class="block bg-sky-500 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-sky-600 transition-colors"
+              href="#"
+              >Start Free Trial</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
