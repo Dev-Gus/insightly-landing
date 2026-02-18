@@ -12,7 +12,7 @@
       <nav
         class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
       >
-        <a href="/" class="text-xl font-semibold text-sky-600">Insightly</a>
+        <a href="/" class="text-xl font-semibold text-indigo-600">Insightly</a>
 
         <ul class="hidden md:flex gap-8 text-gray-600 font-medium">
           <li>
@@ -35,8 +35,8 @@
         <div class="flex items-center gap-4">
           <a
             href="#"
-            class="hidden md:inline-block bg-sky-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-sky-700 transition-colors"
-            >Start Free Trial</a
+            class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
+            >Get Free Dashboard</a
           >
 
           <button
@@ -54,7 +54,7 @@
 
       <div
         id="mobile-menu"
-        class="mobile-menu w-full bg-white border-b border-gray-200 px-4 md:hidden max-h-0 overflow-hidden transition-all duration-700 ease-in-out"
+        class="mobile-menu w-full bg-white border-b border-gray-200 px-4 md:hidden max-h-0 overflow-hidden transition-all duration-600 ease-in-out"
       >
         <ul
           class="flex flex-col gap-4 py-4 transition-all duration-500 ease-in-out"
@@ -82,9 +82,9 @@
           </li>
           <li>
             <a
-              class="block bg-sky-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-sky-700 transition-colors"
+              class="block bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-indigo-700 transition-colors"
               href="#"
-              >Start Free Trial</a
+              >Get Free Dashboard</a
             >
           </li>
         </ul>
@@ -92,16 +92,16 @@
     </header>
 
     <main>
-      <section class="hero py-24 bg-gradient-to-b from-white to-sky-50/40">
+      <section class="hero py-24 bg-gradient-to-b from-white to-indigo-50/40">
         <div
-          class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.15),transparent_60%)]"
+          class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(79,70,229,0.15),transparent_60%)]"
         ></div>
         <div class="max-w-4xl mx-auto px-4 text-center">
           <!-- Headline -->
           <h1
             class="text-4xl md:text-6xl font-semibold tracking-tight text-gray-900"
           >
-            See Your Business Clearly
+            Turn Your Data Into Revenue-Generating Decisions
           </h1>
 
           <!-- Supporting Text -->
@@ -110,21 +110,56 @@
             so you can focus on decisions, not dashboards
           </p>
 
-          <!-- CTA group -->
-          <div
-            class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          <!-- Lead Magnet Description -->
+          <p class="mt-8 text-base text-gray-700 font-medium">
+            Get instant access to your free analytics dashboard - no credit card required
+          </p>
+
+          <!-- Lead Capture Form -->
+          <form
+            class="mt-8 max-w-md mx-auto bg-white rounded-xl border border-gray-200 shadow-lg p-6"
           >
-            <a
-              href="#"
-              class="bg-sky-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-sky-700 transition-colors"
-              >Start Free Trial</a
-            >
-            <a
-              href="#"
-              class="px-6 py-3 rounded-lg font-medium text-gray-700 hover:text-gray-900 transition-colors"
-              >View Demo</a
-            >
-          </div>
+            <div class="space-y-4">
+              <div>
+                <label for="name" class="sr-only">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Full Name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label for="email" class="sr-only">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label for="company" class="sr-only">Company Name (Optional)</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Company Name (Optional)"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
+              >
+                Get Your Free Dashboard Now
+              </button>
+            </div>
+          </form>
 
           <div
             class="mt-16 bg-white border border-gray-200 rounded-xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500"
@@ -458,6 +493,91 @@
                     >
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Objection Handling Section -->
+      <section class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-3xl mx-auto px-4">
+          <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+            <!-- Bullet 1: Most Common Objection -->
+            <div class="flex items-start gap-4 flex-1">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4 text-green-600"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="text-base font-semibold text-gray-900">
+                  No credit card required
+                </p>
+                <p class="text-sm text-gray-600 mt-1">
+                  Start completely free, no payment information needed
+                </p>
+              </div>
+            </div>
+
+            <!-- Bullet 2: Second Most Common Objection -->
+            <div class="flex items-start gap-4 flex-1">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4 text-blue-600"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="text-base font-semibold text-gray-900">
+                  Set up in under 5 minutes
+                </p>
+                <p class="text-sm text-gray-600 mt-1">
+                  Get your dashboard running in minutes, not hours
+                </p>
+              </div>
+            </div>
+
+            <!-- Bullet 3: Third Most Common Objection -->
+            <div class="flex items-start gap-4 flex-1">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4 text-indigo-600"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="text-base font-semibold text-gray-900">
+                  Cancel anytime, no questions asked
+                </p>
+                <p class="text-sm text-gray-600 mt-1">
+                  Zero commitment, zero hassle if you change your mind
+                </p>
               </div>
             </div>
           </div>
