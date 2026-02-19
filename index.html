@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -16,17 +16,17 @@
 
         <ul class="hidden md:flex gap-8 text-gray-600 font-medium">
           <li>
-            <a href="#" class="hover:text-gray-900 transition-colors"
+            <a href="#features" class="hover:text-gray-900 transition-colors"
               >Features</a
             >
           </li>
           <li>
-            <a href="#" class="hover:text-gray-900 transition-colors"
+            <a href="#pricing" class="hover:text-gray-900 transition-colors"
               >Pricing</a
             >
           </li>
           <li>
-            <a href="#" class="hover:text-gray-900 transition-colors"
+            <a href="#resources" class="hover:text-gray-900 transition-colors"
               >Resources</a
             >
           </li>
@@ -34,7 +34,7 @@
 
         <div class="flex items-center gap-4">
           <a
-            href="#"
+            href="#lead-form"
             class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
             >Get Free Dashboard</a
           >
@@ -62,28 +62,28 @@
           <li>
             <a
               class="text-gray-700 font-medium hover:text-gray-900 transition-colors"
-              href="#"
+              href="#features"
               >Features</a
             >
           </li>
           <li>
             <a
               class="text-gray-700 font-medium hover:text-gray-900 transition-colors"
-              href="#"
+              href="#pricing"
               >Pricing</a
             >
           </li>
           <li>
             <a
               class="text-gray-700 font-medium hover:text-gray-900 transition-colors"
-              href="#"
+              href="#resources"
               >Resources</a
             >
           </li>
           <li>
             <a
               class="block bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-indigo-700 transition-colors"
-              href="#"
+              href="#lead-form"
               >Get Free Dashboard</a
             >
           </li>
@@ -110,59 +110,8 @@
             so you can focus on decisions, not dashboards
           </p>
 
-          <!-- Lead Magnet Description -->
-          <p class="mt-8 text-base text-gray-700 font-medium">
-            Get instant access to your free analytics dashboard - no credit card required
-          </p>
-
-          <!-- Lead Capture Form -->
-          <form
-            class="mt-8 max-w-md mx-auto bg-white rounded-xl border border-gray-200 shadow-lg p-6"
-          >
-            <div class="space-y-4">
-              <div>
-                <label for="name" class="sr-only">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Full Name"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
-                />
-              </div>
-              <div>
-                <label for="email" class="sr-only">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email Address"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
-                />
-              </div>
-              <div>
-                <label for="company" class="sr-only">Company Name (Optional)</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Company Name (Optional)"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
-                />
-              </div>
-              <button
-                type="submit"
-                class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
-              >
-                Get Your Free Dashboard Now
-              </button>
-            </div>
-          </form>
-
           <div
-            class="mt-16 bg-white border border-gray-200 rounded-xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500"
+            class="mt-12 bg-white border border-gray-200 rounded-xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500"
           >
             <!-- Fake Browser Header -->
             <div
@@ -496,16 +445,79 @@
               </div>
             </div>
           </div>
+
+          <!-- Lead Magnet Description (Form Heading) -->
+          <h2
+            id="lead-form-heading"
+            class="mt-12 text-xl font-semibold text-gray-900"
+          >
+            Get instant access to your free analytics dashboard — no credit card
+            required
+          </h2>
+
+          <!-- Lead Capture Form -->
+          <form
+            id="lead-form"
+            aria-labelledby="lead-form-heading"
+            class="mt-6 max-w-md mx-auto bg-white rounded-xl border border-gray-200 shadow-lg p-6"
+          >
+            <div class="space-y-4">
+              <div>
+                <label for="name" class="sr-only">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Full Name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label for="email" class="sr-only">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label for="company" class="sr-only"
+                  >Company Name (Optional)</label
+                >
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Company Name (Optional)"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
+              >
+                Get Your Free Dashboard Now
+              </button>
+            </div>
+          </form>
         </div>
       </section>
 
       <!-- Objection Handling Section -->
       <section class="py-16 bg-white border-b border-gray-100">
         <div class="max-w-3xl mx-auto px-4">
-          <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+          <div
+            class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
+          >
             <!-- Bullet 1: Most Common Objection -->
             <div class="flex items-start gap-4 flex-1">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -531,7 +543,9 @@
 
             <!-- Bullet 2: Second Most Common Objection -->
             <div class="flex items-start gap-4 flex-1">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -557,7 +571,9 @@
 
             <!-- Bullet 3: Third Most Common Objection -->
             <div class="flex items-start gap-4 flex-1">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-1">
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -585,40 +601,53 @@
       </section>
 
       <!-- Social Proof Section (Minimal) -->
-      <section class="py-12 bg-gray-50">
+      <section id="resources" class="py-12 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4">
           <!-- Trust Stat -->
           <div class="text-center mb-8">
             <p class="text-lg font-semibold text-gray-900">
-              Join <span class="text-indigo-600">10,000+</span> businesses using Insightly
+              Join <span class="text-indigo-600">10,000+</span> businesses using
+              Insightly
             </p>
           </div>
 
           <!-- Minimal Testimonials -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Testimonial 1 -->
-            <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+            <div
+              class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm"
+            >
               <p class="text-gray-700 text-sm mb-4">
-                "We increased our revenue by 40% in the first month. The insights are incredibly clear."
+                "We increased our revenue by 40% in the first month. The
+                insights are incredibly clear."
               </p>
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
+                <div
+                  class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center"
+                >
                   <span class="text-indigo-600 font-semibold text-sm">SM</span>
                 </div>
                 <div>
-                  <p class="text-sm font-semibold text-gray-900">Sarah Martinez</p>
+                  <p class="text-sm font-semibold text-gray-900">
+                    Sarah Martinez
+                  </p>
                   <p class="text-xs text-gray-500">CEO, TechFlow Inc.</p>
                 </div>
               </div>
             </div>
 
             <!-- Testimonial 2 -->
-            <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+            <div
+              class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm"
+            >
               <p class="text-gray-700 text-sm mb-4">
-                "Setup took 3 minutes. Best analytics tool we've used. Highly recommend."
+                "Setup took 3 minutes. Best analytics tool we've used. Highly
+                recommend."
               </p>
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <div
+                  class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center"
+                >
                   <span class="text-blue-600 font-semibold text-sm">JD</span>
                 </div>
                 <div>
@@ -644,7 +673,9 @@
         </div>
 
         <!-- Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mx-2 md:mx-6">
+        <div
+          class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4"
+        >
           <!-- Feature 1 -->
           <div
             class="md:col-span-2 bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
@@ -712,7 +743,9 @@
             class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
           >
             <h3 class="text-lg font-semibold text-gray-900">Easy Export</h3>
-            <p class="text-gray-500 mt-1.5 text-sm">Download data in one click.</p>
+            <p class="text-gray-500 mt-1.5 text-sm">
+              Download data in one click.
+            </p>
             <div
               class="mt-6 h-24 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center group cursor-pointer hover:bg-gray-100 transition-colors"
             >
@@ -764,7 +797,7 @@
                 <span class="text-base font-extrabold text-gray-900">/mo</span>
               </p>
               <a
-                href="#"
+                href="#lead-form"
                 class="mt-8 block w-full bg-indigo-50 text-indigo-700 font-semibold py-3 px-4 rounded-xl text-center hover:bg-indigo-100 transition-colors"
                 >Get Started</a
               >
@@ -819,7 +852,7 @@
                 <span class="text-base font-medium text-gray-500">/mo</span>
               </p>
               <a
-                href="#"
+                href="#lead-form"
                 class="mt-8 block w-full bg-indigo-600 text-white font-semibold py-3 px-4 rounded-xl text-center hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
                 >Start Free Trial</a
               >
@@ -876,26 +909,20 @@
     <!-- Footer -->
     <footer class="bg-indigo-900">
       <div class="max-w-7xl mx-auto px-4 py-8">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6"
+        >
           <!-- Legal Links -->
           <div class="flex items-center gap-4 text-sm text-gray-200">
-            <a
-              href="#"
-              class="hover:text-white transition-colors"
+            <a href="#" class="hover:text-white transition-colors"
               >Privacy Policy</a
             >
             <span class="text-indigo-300">|</span>
-            <a
-              href="#"
-              class="hover:text-white transition-colors"
+            <a href="#" class="hover:text-white transition-colors"
               >Terms of Service</a
             >
             <span class="text-indigo-300">|</span>
-            <a
-              href="#"
-              class="hover:text-white transition-colors"
-              >Contact</a
-            >
+            <a href="#" class="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
         <!-- Copyright -->
