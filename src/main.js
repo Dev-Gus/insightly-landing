@@ -1,11 +1,15 @@
-import './style.css'
+import "./style.css";
 
 const toggleBtn = document.getElementById("menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuList = mobileMenu?.querySelector("ul");
 
 if (toggleBtn && mobileMenu && mobileMenuList) {
+  let isMenuOpen = false;
+
   const openMenu = () => {
+    isMenuOpen = true;
+
     mobileMenu.classList.remove("max-h-0");
     mobileMenu.classList.add("max-h-96");
 
@@ -13,9 +17,11 @@ if (toggleBtn && mobileMenu && mobileMenuList) {
     mobileMenuList.classList.add("opacity-100", "translate-y-0");
 
     toggleBtn.setAttribute("aria-expanded", "true");
+    toggleBtn.setAttribute("aria-label", "Close menu");
   };
 
   const closeMenu = () => {
+    isMenuOpen = false;
     mobileMenu.classList.remove("max-h-96");
     mobileMenu.classList.add("max-h-0");
 
@@ -23,20 +29,19 @@ if (toggleBtn && mobileMenu && mobileMenuList) {
     mobileMenuList.classList.add("opacity-0", "-translate-y-2");
 
     toggleBtn.setAttribute("aria-expanded", "false");
+    toggleBtn.setAttribute("aria-label", "Open menu");
   };
 
   toggleBtn.addEventListener("click", () => {
-    const isCurrentlyClosed = mobileMenu.classList.contains("max-h-0");
-
-    if (isCurrentlyClosed) {
-      openMenu();
-    } else {
+    if (isMenuOpen) {
       closeMenu();
+    } else {
+      openMenu();
     }
   });
 
   // Auto-close mobile menu when a nav link is clicked
-  const mobileLinks = mobileMenuList.querySelectorAll("a[href^=\"#\"]");
+  const mobileLinks = mobileMenuList.querySelectorAll('a[href^="#"]');
 
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -50,16 +55,39 @@ if (toggleBtn && mobileMenu && mobileMenuList) {
 
 // Form handling with Formspree
 const leadForm = document.getElementById("lead-form");
+const confirmationCard = document.getElementById("confirmation-card");
+const leadHeading = document.getElementById("lead-form-heading");
+const formError = document.getElementById("form-error");
 
 if (leadForm) {
+  function handleSuccess() {
+    leadForm.classList.remove("opacity-100");
+    leadForm.classList.add("opacity-0");
+
+    setTimeout(() => {
+      leadForm.classList.add("hidden");
+      leadHeading.textContent = "Dashboard link sent to your email!";
+
+      confirmationCard.classList.remove("hidden");
+
+      setTimeout(() => {
+        confirmationCard.classList.remove("opacity-0");
+        confirmationCard.classList.add("opacity-100");
+      }, 10);
+    }, 300);
+  }
+
   leadForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    formError.classList.add("hidden");
+    formError.classList.remove("opacity-100");
+    formError.classList.add("opacity-0");
 
     const submitBtn = leadForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.textContent;
 
     try {
-      // Show loading state
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
 
@@ -69,42 +97,28 @@ if (leadForm) {
         method: "POST",
         body: formData,
         headers: {
-          "Accept": "application/json"
-        }
+          Accept: "application/json",
+        },
       });
 
-      if (response.ok) {
-        // Success
-        submitBtn.textContent = "✓ Dashboard link sent to your email!";
-        submitBtn.classList.add("bg-green-600", "hover:bg-green-700");
-        submitBtn.classList.remove("bg-indigo-600", "hover:bg-indigo-700");
-        
-        // Reset form
-        leadForm.reset();
-        
-        // Reset button after 3 seconds
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalBtnText;
-          submitBtn.classList.remove("bg-green-600", "hover:bg-green-700");
-          submitBtn.classList.add("bg-indigo-600", "hover:bg-indigo-700");
-        }, 3000);
-      } else {
+      if (!response.ok) {
         throw new Error("Form submission failed");
       }
+
+      leadForm.reset();
+      handleSuccess();
     } catch (error) {
       console.error("Error:", error);
-      submitBtn.textContent = "Error. Please try again.";
-      submitBtn.classList.add("bg-red-600", "hover:bg-red-700");
-      submitBtn.classList.remove("bg-indigo-600", "hover:bg-indigo-700");
-      
-      // Reset button after 3 seconds
+
+      formError.classList.remove("hidden");
+
       setTimeout(() => {
-        submitBtn.textContent = originalBtnText;
-        submitBtn.classList.remove("bg-red-600", "hover:bg-red-700");
-        submitBtn.classList.add("bg-indigo-600", "hover:bg-indigo-700");
-        submitBtn.disabled = false;
-      }, 3000);
+        formError.classList.remove("opacity-0");
+        formError.classList.add("opacity-100");
+      }, 10);
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
     }
   });
 }

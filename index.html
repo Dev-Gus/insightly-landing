@@ -35,13 +35,13 @@
         <div class="flex items-center gap-4">
           <a
             href="#lead-form"
-            class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
+            class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors cursor-pointer"
             >Get Free Dashboard</a
           >
 
           <button
             id="menu-toggle"
-            class="md:hidden flex flex-col gap-1.5 p-2"
+            class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
             aria-label="Open menu"
             aria-expanded="false"
           >
@@ -54,7 +54,7 @@
 
       <div
         id="mobile-menu"
-        class="mobile-menu w-full bg-white border-b border-gray-200 px-4 md:hidden max-h-0 overflow-hidden transition-all duration-600 ease-in-out"
+        class="mobile-menu w-full bg-white border-b border-gray-200 px-4 md:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
       >
         <ul
           class="flex flex-col gap-4 py-4 transition-all duration-500 ease-in-out"
@@ -455,57 +455,79 @@
             required
           </h2>
 
-          <!-- Lead Capture Form -->
-          <form
-            id="lead-form"
-            aria-labelledby="lead-form-heading"
-            action="https://formspree.io/f/xbdaajpj"
-            method="POST"
-            class="mt-6 max-w-md mx-auto bg-white rounded-xl border border-gray-200 shadow-lg p-6"
-          >
-            <div class="space-y-4">
-              <div>
-                <label for="name" class="sr-only">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Full Name"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
-                />
-              </div>
-              <div>
-                <label for="email" class="sr-only">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email Address"
-                  required
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
-                />
-              </div>
-              <div>
-                <label for="company" class="sr-only"
-                  >Company Name (Optional)</label
-                >
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Company Name (Optional)"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
-                />
-              </div>
-              <button
-                type="submit"
-                class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
-              >
-                Get Your Free Dashboard Now
-              </button>
+          <div id="lead-form-wrapper" class="mt-6 max-w-md mx-auto">
+            <!-- Confirmation Card  -->
+            <div
+              id="confirmation-card"
+              class="hidden opacity-0 transition-opacity duration-300 bg-white rounded-xl border border-gray-200 shadow-lg p-6 text-center"
+            >
+              <h3 class="text-xl font-semibold text-gray-900">
+                Your free dashboard is ready
+              </h3>
+              <p class="mt-2 text-gray-600">
+                We’ve sent you an email with instant access details. Check your
+                inbox and start exploring your analytics.
+              </p>
             </div>
-          </form>
+
+            <!-- Lead Capture Form -->
+            <form
+              id="lead-form"
+              aria-labelledby="lead-form-heading"
+              action="https://formspree.io/f/xbdaajpj"
+              method="POST"
+              class="bg-white rounded-xl border border-gray-200 shadow-lg p-6 transition-opacity duration-300 opacity-100"
+            >
+              <div class="space-y-4">
+                <div>
+                  <label for="name" class="sr-only">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Full Name"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="sr-only">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label for="company" class="sr-only"
+                    >Company Name (Optional)</label
+                  >
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Company Name (Optional)"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
+                >
+                  Get Your Free Dashboard Now
+                </button>
+                <p
+                  id="form-error"
+                  class="hidden opacity-0 transition-opacity duration-200 mt-3 text-sm text-red-600"
+                >
+                  We couldn't send your dashboard. Please try again.
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
 
@@ -916,15 +938,11 @@
         >
           <!-- Legal Links -->
           <div class="flex items-center gap-4 text-sm text-gray-200">
-            <a
-              href="/privacy.html"
-              class="hover:text-white transition-colors"
+            <a href="/privacy.html" class="hover:text-white transition-colors"
               >Privacy Policy</a
             >
             <span class="text-indigo-300">|</span>
-            <a
-              href="/terms.html"
-              class="hover:text-white transition-colors"
+            <a href="/terms.html" class="hover:text-white transition-colors"
               >Terms of Service</a
             >
             <span class="text-indigo-300">|</span>
