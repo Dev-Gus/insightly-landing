@@ -473,6 +473,7 @@
             <!-- Lead Capture Form -->
             <form
               id="lead-form"
+              novalidate
               aria-labelledby="lead-form-heading"
               action="https://formspree.io/f/xbdaajpj"
               method="POST"
@@ -487,8 +488,17 @@
                     name="name"
                     placeholder="Full Name"
                     required
+                    aria-describedby="name-error"
+                    aria-invalid="false"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
                   />
+                  <p
+                    id="name-error"
+                    class="hidden mt-1 text-sm text-red-600"
+                    role="alert"
+                  >
+                    Please enter your full name.
+                  </p>
                 </div>
                 <div>
                   <label for="email" class="sr-only">Email Address</label>
@@ -498,8 +508,17 @@
                     name="email"
                     placeholder="Email Address"
                     required
+                    aria-describedby="email-error"
+                    aria-invalid="false"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors"
                   />
+                  <p
+                    id="email-error"
+                    class="hidden mt-1 text-sm text-red-600"
+                    role="alert"
+                  >
+                    Please enter a valid email address.
+                  </p>
                 </div>
                 <div>
                   <label for="company" class="sr-only"
