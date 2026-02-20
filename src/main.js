@@ -47,3 +47,64 @@ if (toggleBtn && mobileMenu && mobileMenuList) {
     });
   });
 }
+
+// Form handling with Formspree
+const leadForm = document.getElementById("lead-form");
+
+if (leadForm) {
+  leadForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitBtn = leadForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.textContent;
+
+    try {
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      const formData = new FormData(leadForm);
+
+      const response = await fetch(leadForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        // Success
+        submitBtn.textContent = "✓ Dashboard link sent to your email!";
+        submitBtn.classList.add("bg-green-600", "hover:bg-green-700");
+        submitBtn.classList.remove("bg-indigo-600", "hover:bg-indigo-700");
+        
+        // Reset form
+        leadForm.reset();
+        
+        // Reset button after 3 seconds
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+          submitBtn.classList.remove("bg-green-600", "hover:bg-green-700");
+          submitBtn.classList.add("bg-indigo-600", "hover:bg-indigo-700");
+        }, 3000);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      submitBtn.textContent = "Error. Please try again.";
+      submitBtn.classList.add("bg-red-600", "hover:bg-red-700");
+      submitBtn.classList.remove("bg-indigo-600", "hover:bg-indigo-700");
+      
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        submitBtn.textContent = originalBtnText;
+        submitBtn.classList.remove("bg-red-600", "hover:bg-red-700");
+        submitBtn.classList.add("bg-indigo-600", "hover:bg-indigo-700");
+        submitBtn.disabled = false;
+      }, 3000);
+    }
+  });
+}
