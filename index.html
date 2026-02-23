@@ -11,6 +11,7 @@
     <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
       <nav
         class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+        aria-label="Main navigation"
       >
         <a href="/" class="text-xl font-semibold text-indigo-600">Insightly</a>
 
@@ -44,6 +45,7 @@
             class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
             aria-label="Open menu"
             aria-expanded="false"
+            aria-controls="mobile-menu"
           >
             <span class="w-6 h-0.5 bg-gray-600"></span>
             <span class="w-6 h-0.5 bg-gray-600"></span>
@@ -52,9 +54,10 @@
         </div>
       </nav>
 
-      <div
+      <nav
         id="mobile-menu"
         class="mobile-menu w-full bg-white border-b border-gray-200 px-4 md:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+        aria-label="Mobile navigation"
       >
         <ul
           class="flex flex-col gap-4 py-4 transition-all duration-500 ease-in-out"
@@ -88,11 +91,13 @@
             >
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
 
     <main>
-      <section class="hero py-24 bg-gradient-to-b from-white to-indigo-50/40">
+      <section
+        class="relative hero py-24 bg-gradient-to-b from-white to-indigo-50/40"
+      >
         <div
           class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(79,70,229,0.15),transparent_60%)]"
         ></div>
@@ -112,6 +117,8 @@
 
           <div
             class="mt-12 bg-white border border-gray-200 rounded-xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500"
+            aria-hidden="true"
+            role="presentation"
           >
             <!-- Fake Browser Header -->
             <div
@@ -534,7 +541,7 @@
                 </div>
                 <button
                   type="submit"
-                  class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
+                  class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
                 >
                   Get Your Free Dashboard Now
                 </button>
@@ -651,6 +658,11 @@
             <p class="text-lg font-semibold text-gray-900">
               Join <span class="text-indigo-600">10,000+</span> businesses using
               Insightly
+            </p>
+
+            <p class="text-xs text-gray-500 mt-2">
+              *Testimonials shown are fictional and for demonstration purposes
+              only.
             </p>
           </div>
 
@@ -975,7 +987,8 @@
         <!-- Copyright -->
         <div class="mt-4 text-center">
           <p class="text-sm text-gray-300">
-            © 2024 Insightly. All rights reserved.
+            © <span class="copyright-year">2026</span> Insightly. All rights
+            reserved.
           </p>
         </div>
       </div>
