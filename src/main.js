@@ -80,12 +80,38 @@ if (leadForm) {
   leadForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    formError.classList.add("hidden");
-    formError.classList.remove("opacity-100");
-    formError.classList.add("opacity-0");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
 
     const submitBtn = leadForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.textContent;
+
+    let isValid = true;
+
+    nameInput.setAttribute("aria-invalid", "false");
+    emailInput.setAttribute("aria-invalid", "false");
+    nameError.classList.add("hidden");
+    emailError.classList.add("hidden");
+
+    if (!nameInput.value.trim()) {
+      nameInput.setAttribute("aria-invalid", "true");
+      nameError.classList.remove("hidden");
+      isValid = false;
+    }
+
+    if (!emailInput.value.trim() || !emailInput.checkValidity()) {
+      emailInput.setAttribute("aria-invalid", "true");
+      emailError.classList.remove("hidden");
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    formError.classList.add("hidden");
+    formError.classList.remove("opacity-100");
+    formError.classList.add("opacity-0");
 
     try {
       submitBtn.disabled = true;
