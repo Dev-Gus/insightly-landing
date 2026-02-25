@@ -45,6 +45,31 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body class="font-sans">
+    <!-- SVG Sprite definition -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      style="display: none"
+    >
+      <!-- Checkmark icon (used in objection bullets & pricing feature lists) -->
+      <symbol id="icon-checkmark" viewBox="0 0 20 20">
+        <path
+          fill-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+
+      <!-- Trend-up arrow icon (used in stat badge pills) -->
+      <symbol id="icon-trend-up" viewBox="0 0 20 20">
+        <path
+          fill-rule="evenodd"
+          d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+    </svg>
+
     <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
       <nav
         class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
@@ -195,17 +220,8 @@
                   <span
                     class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="w-3 h-3"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"
-                        clip-rule="evenodd"
-                      />
+                    <svg fill="currentColor" class="w-3 h-3" aria-hidden="true">
+                      <use href="#icon-trend-up" />
                     </svg>
                     +20.1%
                   </span>
@@ -229,17 +245,8 @@
                   <span
                     class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="w-3 h-3"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"
-                        clip-rule="evenodd"
-                      />
+                    <svg fill="currentColor" class="w-3 h-3" aria-hidden="true">
+                      <use href="#icon-trend-up" />
                     </svg>
                     +12%
                   </span>
@@ -263,17 +270,8 @@
                   <span
                     class="inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-600/20"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="w-3 h-3"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"
-                        clip-rule="evenodd"
-                      />
+                    <svg fill="currentColor" class="w-3 h-3" aria-hidden="true">
+                      <use href="#icon-trend-up" />
                     </svg>
                     +0.4%
                   </span>
@@ -612,16 +610,11 @@
                 class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
                   fill="currentColor"
                   class="w-4 h-4 text-green-600"
+                  aria-hidden="true"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
+                  <use href="#icon-checkmark" />
                 </svg>
               </div>
               <div>
@@ -640,16 +633,11 @@
                 class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
                   fill="currentColor"
                   class="w-4 h-4 text-blue-600"
+                  aria-hidden="true"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
+                  <use href="#icon-checkmark" />
                 </svg>
               </div>
               <div>
@@ -668,16 +656,11 @@
                 class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-1"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
                   fill="currentColor"
                   class="w-4 h-4 text-indigo-600"
+                  aria-hidden="true"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
+                  <use href="#icon-checkmark" />
                 </svg>
               </div>
               <div>
@@ -912,30 +895,22 @@
               <ul class="mt-8 space-y-4 text-sm text-gray-600">
                 <li class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-green-500"
-                    viewBox="0 0 20 20"
                     fill="currentColor"
+                    class="w-5 h-5 text-green-500"
+                    aria-hidden="true"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
+                    <use href="#icon-checkmark" />
                   </svg>
                   Up to 1,000 visitors
                 </li>
 
                 <li class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-green-500"
-                    viewBox="0 0 20 20"
                     fill="currentColor"
+                    class="w-5 h-5 text-green-500"
+                    aria-hidden="true"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
+                    <use href="#icon-checkmark" />
                   </svg>
                   Basic Analytics
                 </li>
@@ -969,43 +944,31 @@
               <ul class="mt-8 space-y-4 text-sm text-gray-600">
                 <li class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-green-500"
-                    viewBox="0 0 20 20"
                     fill="currentColor"
+                    class="w-5 h-5 text-green-500"
+                    aria-hidden="true"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
+                    <use href="#icon-checkmark" />
                   </svg>
                   Unlimited visitors
                 </li>
                 <li class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-green-500"
-                    viewBox="0 0 20 20"
                     fill="currentColor"
+                    class="w-5 h-5 text-green-500"
+                    aria-hidden="true"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
+                    <use href="#icon-checkmark" />
                   </svg>
                   Advanced Funnels
                 </li>
                 <li class="flex items-center gap-3">
                   <svg
-                    class="w-5 h-5 text-green-500"
-                    viewBox="0 0 20 20"
                     fill="currentColor"
+                    class="w-5 h-5 text-green-500"
+                    aria-hidden="true"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
+                    <use href="#icon-checkmark" />
                   </svg>
                   Team Collaboration
                 </li>
